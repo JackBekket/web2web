@@ -15,13 +15,32 @@ contract owned {
     }
 }
 
-contract Hosting {
+contract HostingDNS  is owned{
 
 string public standard = 'hosting 0.1';
 
-mapping (uint256 => string) public Links;
-mapping (address => uint256) public balanceOf;
+uint public price;
 
+//  mapping (address => mapping (uint => string)) public Links;
+mapping (address => uint256) public balanceOf;
+mapping (address => string) public Links;
+
+//initialization
+function HostingDNS (uint pricePlace){
+price = pricePlace;
+
+}
+
+function buyPlace (uint256 amount, string link){
+balance0f[msg.sender]=amount;
+Links[address]=link;
+
+
+}
+
+function () {
+  throw;
+}
 
 
 }

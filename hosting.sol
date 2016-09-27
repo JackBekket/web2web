@@ -15,9 +15,9 @@ contract owned {
     }
 }
 
-contract HostingDNS  is owned{
+contract hosting  is owned{
 
-string public standard = 'name_hosting 0.1';
+string public standard = 'hosting 0.1';
 string public version = '0.0.1';
 
 uint public price;
@@ -27,7 +27,7 @@ mapping (address => uint256) public balanceOf;
 mapping (address => string) public Links;
 
 //initialization
-function HostingDNS (uint pricePlace){
+function hosting (uint pricePlace){
 price = pricePlace;
 
 }
@@ -35,8 +35,13 @@ price = pricePlace;
 function buyPlace (uint256 amount, string link){
 balance0f[msg.sender]=amount;
 Links[address]=link;
+
+
 }
 
+function () {
+  throw;
+}
 
 function safeWithdrawal() onlyOwner {
 
@@ -57,14 +62,13 @@ function safeWithdrawal() onlyOwner {
        }
    }
 
-function () {
-  throw;
-}
 
-function destroy (){
+
+function destroy () onlyOwner{
   if (msg.sender == owner) {
         suicide(owner); // send funds to organizer
       }
 }
+
 
 }

@@ -33,6 +33,7 @@ price = pricePlace;
 }
 
 function buyPlace (uint256 amount, string link){
+if (amount<price) throw;
 balance0f[msg.sender]=amount;
 Links[address]=link;
 }

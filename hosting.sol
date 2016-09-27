@@ -24,7 +24,7 @@ uint public price;
 
 //  mapping (address => mapping (uint => string)) public Links;
 mapping (address => uint256) public balanceOf;
-mapping (address => string) public Links;
+mapping (address => mapping (string => uint)) public Links;
 
 //initialization
 function hosting (uint pricePlace){
@@ -33,6 +33,7 @@ price = pricePlace;
 }
 
 function buyPlace (uint256 amount, string link){
+  if (amount<price) throw;
 balance0f[msg.sender]=amount;
 Links[address]=link;
 

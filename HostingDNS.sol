@@ -25,7 +25,7 @@ uint public price;
 //  mapping (address => mapping (uint => string)) public Links;
 mapping (address => uint256) public balanceOf;
 mapping (address => string) public Links;
-
+event Registred (address client, uint256 amount, string link);
 //initialization
 function HostingDNS (uint pricePlace){
 price = pricePlace;
@@ -35,7 +35,9 @@ price = pricePlace;
 function buyPlace (uint256 amount, string link){
 if (amount<price) throw;
 balance0f[msg.sender]=amount;
+address client= msg.sender;
 Links[address]=link;
+Registred(client,amount,link);
 }
 
 

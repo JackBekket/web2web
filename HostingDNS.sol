@@ -1,3 +1,7 @@
+
+/*
+# Copyright for Sergey Ponomarev (Jack Bekket)
+*/
 contract owned {
     address public owner;
 
